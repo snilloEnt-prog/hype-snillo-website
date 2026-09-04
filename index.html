@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hype Snillo | The International Event Doctor</title>
+
+    <meta name="description" content="Hype Snillo - The International Event Doctor. Professional MC, Hypeman, DJ, PA, Photography, Videography and Event Experience services.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: #080808;
+            color: #ffffff;
+        }
+
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            background: rgba(0,0,0,0.95);
+            border-bottom: 1px solid #222;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: auto;
+            padding: 18px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #ffcc00;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 20px 60px;
+            background:
+                linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.85)),
+                url("https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=1800&q=80");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 8vw, 90px);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 span {
+            color: #ffcc00;
+        }
+
+        .hero h2 {
+            font-size: clamp(20px, 4vw, 35px);
+            margin-bottom: 20px;
+        }
+
+        .tagline {
+            font-size: 20px;
+            margin-bottom: 30px;
+            color: #ddd;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: .3s;
+        }
+
+        .primary {
+            background: #ffcc00;
+            color: #000;
+        }
+
+        .secondary {
+            border: 2px solid #fff;
+            color: #fff;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            opacity: .85;
+        }
+
+        section {
+            padding: 90px 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: #ffcc00;
+        }
+
+        .about {
+            background: #111;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about h3 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            color: #ccc;
+            margin-bottom: 15px;
+        }
+
+        .why-us {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .why-card {
+            background: #1b1b1b;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #ffcc00;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .service-card {
+            background: #121212;
+            padding: 30px 20px;
+            border-radius: 12px;
+            border: 1px solid #222;
+            transition: .3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: #ffcc00;
+        }
+
+        .service-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            margin-bottom: 10px;
+            color: #ffcc00;
+        }
+
+        .service-card p {
+            color: #bbb;
+        }
+
+        .portfolio {
+            background: #111;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .portfolio-item {
+            height: 230px;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: .4s;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .portfolio-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 15px;
+            background: linear-gradient(transparent, rgba(0,0,0,.9));
+            font-weight: bold;
+        }
+
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .testimonial {
+            background: #121212;
+            padding: 25px;
+            border-radius: 12px;
+        }
+
+        .testimonial p {
+            color: #ccc;
+            font-style: italic;
+        }
+
+        .testimonial h4 {
+            margin-top: 15px;
+            color: #ffcc00;
+        }
+
+        .contact {
+            background: #111;
+        }
+
+        .contact-box {
+            max-width: 700px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .contact-box p {
+            color: #ccc;
+            margin-bottom: 25px;
+        }
+
+        .contact-details {
+            display: grid;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .contact-details a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .contact-details a:hover {
+            color: #ffcc00;
+        }
+
+        .faq {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        details {
+            background: #121212;
+            margin-bottom: 12px;
+            padding: 20px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        summary {
+            font-weight: bold;
+            color: #ffcc00;
+        }
+
+        details p {
+            color: #bbb;
+            margin-top: 10px;
+        }
+
+        .cta {
+            text-align: center;
+            background: #ffcc00;
+            color: #000;
+        }
+
+        .cta h2 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            margin-bottom: 25px;
+        }
+
+        .cta .btn {
+            background: #000;
+            color: #fff;
+        }
+
+        footer {
+            text-align: center;
+            padding: 35px 20px;
+            background: #050505;
+            color: #999;
+        }
+
+        .socials {
+            margin: 15px 0;
+        }
+
+        .socials a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .socials a:hover {
+            color: #ffcc00;
+        }
+
+        .whatsapp {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            text-decoration: none;
+            z-index: 1000;
+            box-shadow: 0 5px 20px rgba(0,0,0,.4);
+        }
+
+        @media (max-width: 800px) {
+
+            nav ul {
+                display: none;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .testimonials {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 550px) {
+
+            .services-grid,
+            .portfolio-grid,
+            .why-us {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 70px 18px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <div class="logo">HYPE <span>SNILLO</span></div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h1>HYPE <span>SNILLO</span></h1>
+
+        <h2>The International Event Doctor</h2>
+
+        <p class="tagline">
+            The Voice. The Energy. The Experience.
+        </p>
+
+        <p class="tagline">
+            We don't just host events. We create experiences people remember.
+        </p>
+
+        <div class="buttons">
+            <a href="#contact" class="btn primary">Book Hype Snillo</a>
+
+            <a href="#services" class="btn secondary">
+                Explore Services
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            About <span>Hype Snillo</span>
+        </h2>
+
+        <div class="about-content">
+
+            <div>
+
+                <h3>More Than Entertainment. We Create Experiences.</h3>
+
+                <p>
+                    Hype Snillo is an event entertainment and experience brand
+                    dedicated to bringing energy, professionalism and unforgettable
+                    moments to every occasion.
+                </p>
+
+                <p>
+                    From weddings and corporate functions to church events,
+                    graduations, youth events and celebrations, we make sure
+                    every moment counts.
+                </p>
+
+                <p>
+                    Our mission is simple:
+                    <strong>to transform ordinary events into unforgettable experiences.</strong>
+                </p>
+
+            </div>
+
+            <div class="why-us">
+
+                <div class="why-card">🔥 High-Energy Hosting</div>
+                <div class="why-card">🎤 Professional MC</div>
+                <div class="why-card">🎧 DJ Entertainment</div>
+                <div class="why-card">🔊 Quality Sound</div>
+                <div class="why-card">📸 Photography</div>
+                <div class="why-card">🎬 Videography</div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section id="services">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Our <span>Services</span>
+        </h2>
+
+        <div class="services-grid">
+
+            <div class="service-card">
+                <div class="service-icon">🎤</div>
+                <h3>MC & Event Hosting</h3>
+                <p>
+                    Professional event hosting that keeps your programme
+                    flowing and your guests engaged.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🔥</div>
+                <h3>Hypeman</h3>
+                <p>
+                    High-energy crowd engagement for parties, youth events,
+                    concerts and celebrations.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🎧</div>
+                <h3>DJ Services</h3>
+                <p>
+                    Great music selection designed to match your audience,
+                    event and atmosphere.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🔊</div>
+                <h3>PA & Sound</h3>
+                <p>
+                    Professional sound solutions for weddings, churches,
+                    corporate functions and events.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📸</div>
+                <h3>Photography</h3>
+                <p>
+                    Capture the important moments of your event through
+                    professional photography.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🎬</div>
+                <h3>Videography & Reels</h3>
+                <p>
+                    Capture your event in engaging videos and social-media-ready
+                    short-form content.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PORTFOLIO -->
+
+<section class="portfolio" id="portfolio">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Our <span>Portfolio</span>
+        </h2>
+
+        <div class="portfolio-grid">
+
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80">
+                <div class="portfolio-label">Weddings</div>
+            </div>
+
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1478146896981-b80fe463b330?auto=format&fit=crop&w=900&q=80">
+                <div class="portfolio-label">Church Events</div>
+            </div>
+
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=900&q=80">
+                <div class="portfolio-label">Live Events</div>
+            </div>
+
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1505236858219-8359eb29e329?auto=format&fit=crop&w=900&q=80">
+                <div class="portfolio-label">Parties</div>
+            </div>
+
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=900&q=80">
+                <div class="portfolio-label">Celebrations</div>
+            </div>
+
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=900&q=80">
+                <div class="portfolio-label">Youth Events</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- TESTIMONIALS -->
+
+<section>
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Client <span>Testimonials</span>
+        </h2>
+
+        <div class="testimonials">
+
+            <div class="testimonial">
+                <p>
+                    "Hype Snillo brought incredible energy to our event
+                    and kept everyone engaged from beginning to end."
+                </p>
+                <h4>— Happy Client</h4>
+            </div>
+
+            <div class="testimonial">
+                <p>
+                    "Professional, energetic and entertaining.
+                    Definitely someone we would recommend."
+                </p>
+                <h4>— Event Client</h4>
+            </div>
+
+            <div class="testimonial">
+                <p>
+                    "The atmosphere was amazing. Hype Snillo understood
+                    the crowd and knew exactly how to keep the energy going."
+                </p>
+                <h4>— Event Organizer</h4>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta">
+
+    <div class="container">
+
+        <h2>Ready To Create An Unforgettable Event?</h2>
+
+        <p>
+            Let's bring your event to life.
+        </p>
+
+        <a href="#contact" class="btn">
+            Book Hype Snillo
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Contact <span>Hype Snillo</span>
+        </h2>
+
+        <div class="contact-box">
+
+            <p>
+                Planning an event? Tell us what you're planning
+                and let's create the right experience for you.
+            </p>
+
+            <div class="contact-details">
+
+                <a href="mailto:snillosnip4@gmail.com">
+                    📧 snillosnip4@gmail.com
+                </a>
+
+                <!-- Replace the number below with your WhatsApp number -->
+
+                <a href="https://wa.me/254700000000" target="_blank">
+                    📱 WhatsApp Us
+                </a>
+
+            </div>
+
+            <a href="https://wa.me/254700000000?text=Hello%20Hype%20Snillo,%20I%20would%20like%20to%20book%20your%20services." 
+               target="_blank"
+               class="btn primary">
+
+                BOOK NOW
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FAQ -->
+
+<section>
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Frequently Asked <span>Questions</span>
+        </h2>
+
+        <div class="faq">
+
+            <details>
+                <summary>How early should I book Hype Snillo?</summary>
+                <p>
+                    We recommend booking as early as possible,
+                    especially for weddings and major events.
+                </p>
+            </details>
+
+            <details>
+                <summary>Do you offer packages?</summary>
+                <p>
+                    Yes. Services can be booked individually or combined
+                    into customized packages.
+                </p>
+            </details>
+
+            <details>
+                <summary>Do you travel outside Nairobi and Kiambu?</summary>
+                <p>
+                    Yes. We can travel depending on the event location
+                    and arrangements.
+                </p>
+            </details>
+
+            <details>
+                <summary>Do you provide sound equipment?</summary>
+                <p>
+                    Yes. PA and sound services are available depending
+                    on the size and requirements of your event.
+                </p>
+            </details>
+
+            <details>
+                <summary>Can I book MC and DJ together?</summary>
+                <p>
+                    Yes. We provide combined entertainment solutions
+                    for events.
+                </p>
+            </details>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h3>HYPE SNILLO</h3>
+
+    <p>The International Event Doctor</p>
+
+    <div class="socials">
+
+        <!-- Replace these with your real links -->
+
+        <a href="#" target="_blank">TikTok</a>
+        <a href="#" target="_blank">Facebook</a>
+        <a href="#" target="_blank">Instagram</a>
+        <a href="#" target="_blank">YouTube</a>
+
+    </div>
+
+    <p>
+        © 2026 Hype Snillo. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<!-- WHATSAPP FLOATING BUTTON -->
+
+<a class="whatsapp"
+   href="https://wa.me/254700000000?text=Hello%20Hype%20Snillo,%20I%20would%20like%20to%20book%20your%20services."
+   target="_blank"
+   aria-label="Chat on WhatsApp">
+
+    💬
+
+</a>
+
+</body>
+</html>
